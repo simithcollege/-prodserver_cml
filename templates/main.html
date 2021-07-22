@@ -13,80 +13,92 @@
   <title>Red Wine Quality Prediction</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container mt-5">
     <form class="" action="{{ url_for('main') }}" method="POST">
       <legend class="my-4" ><center><h2><b>Red Wine features:</b></h2></center></legend><br>
           <!--<fieldset>
         <legend>Input values:</legend>-->
-      <div class="row mb-2">
-        <label class="col-form-label col-sm-2 fw-bold" for="fixed-acidity">Fixed acidity:</label>
-        <div class="col-sm-10">
-          <input type="number" class="form-control" step=0.1 id="fixed-acidity" placeholder="7.4" name="fixed-acidity" required>
+      <div class="row">
+      <div class="col">
+        <div class="row mb-2">
+          <label class="col-form-label col-sm-4 fw-bold" for="fixed-acidity">Fixed acidity:</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" step=0.1 id="fixed-acidity" placeholder="11.2" name="fixed-acidity" required>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <label class="col-form-label col-sm-4 fw-bold" for="volatile-acidity">Volatile acidity:</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" step=0.001 id="volatile-acidity" placeholder="0.28" name="volatile-acidity" required>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <label class="col-form-label col-sm-4 fw-bold" for="citric-acid">Citric acid:</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" step=0.01 id="citric-acid" placeholder="0.56" name="citric-acid" required>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <label class="col-form-label col-sm-4 fw-bold" for="residual-sugar">Residual sugar:</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" step=0.01 id="residual-sugar" placeholder="1.9" name="residual-sugar" required>
+          </div>
         </div>
       </div>
-      <div class="row mb-2">
-        <label class="col-form-label col-sm-2 fw-bold" for="volatile-acidity">Volatile acidity:</label>
-        <div class="col-sm-10">
-          <input type="number" class="form-control" step=0.001 id="volatile-acidity" placeholder="0.7" name="volatile-acidity" required>
+      <div class="col">
+        <div class="row mb-2">
+          <label class="col-form-label col-sm-5 fw-bold" for="chlorides">Chlorides:</label>
+          <div class="col-sm-7">
+            <input type="number" class="form-control" step=0.001 id="chlorides" placeholder="0.075" name="chlorides" required>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <label class="col-form-label col-sm-5 fw-bold" for="free-sulfur">Free sulfur dioxide:</label>
+          <div class="col-sm-7">
+            <input type="number" class="form-control" id="free-sulfur" placeholder="17" name="free-sulfur" required>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <label class="col-form-label col-sm-5 fw-bold" for="total-sulfur">Total sulfur dioxide:</label>
+          <div class="col-sm-7">
+            <input type="number" class="form-control" id="total-sulfur" placeholder="60" name="total-sulfur" required>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <label class="col-form-label col-sm-5 fw-bold" for="density">Density:</label>
+          <div class="col-sm-7">
+            <input type="number" class="form-control" step=0.0001 id="density" placeholder="0.998" name="density" required>
+          </div>
         </div>
       </div>
-      <div class="row mb-2">
-        <label class="col-form-label col-sm-2 fw-bold" for="citric-acid">Citric acid:</label>
-        <div class="col-sm-10">
-          <input type="number" class="form-control" step=0.01 id="citric-acid" placeholder="0" name="citric-acid" required>
+      <div class="col">
+        <div class="row mb-2">
+          <label class="col-form-label col-sm-4 fw-bold" for="ph">Ph:</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" step=0.01 id="ph" placeholder="3.16" name="ph" required>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <label class="col-form-label col-sm-4 fw-bold" for="sulphates">Sulphates:</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" step=0.01 id="sulphates" placeholder="0.58" name="sulphates" required>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <label class="col-form-label col-sm-4 fw-bold" for="alcohol">Alcohol:</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" step=0.1 id="alcohol" placeholder="9.8" name="alcohol" required>
+          </div>
         </div>
       </div>
-      <div class="row mb-2">
-        <label class="col-form-label col-sm-2 fw-bold" for="residual-sugar">Residual sugar:</label>
-        <div class="col-sm-10">
-          <input type="number" class="form-control" step=0.01 id="residual-sugar" placeholder="1.9" name="residual-sugar" required>
-        </div>
-      </div>
-      <div class="row mb-2">
-        <label class="col-form-label col-sm-2 fw-bold" for="chlorides">Chlorides:</label>
-        <div class="col-sm-10">
-          <input type="number" class="form-control" step=0.001 id="chlorides" placeholder="0.076" name="chlorides" required>
-        </div>
-      </div>
-      <div class="row mb-2">
-        <label class="col-form-label col-sm-2 fw-bold" for="free-sulfur">Free sulfur dioxide:</label>
-        <div class="col-sm-10">
-          <input type="number" class="form-control" id="free-sulfur" placeholder="11" name="free-sulfur" required>
-        </div>
-      </div>
-      <div class="row mb-2">
-        <label class="col-form-label col-sm-2 fw-bold" for="total-sulfur">Total sulfur dioxide:</label>
-        <div class="col-sm-10">
-          <input type="number" class="form-control" id="total-sulfur" placeholder="34" name="total-sulfur" required>
-        </div>
-      </div>
-      <div class="row mb-2">
-        <label class="col-form-label col-sm-2 fw-bold" for="density">Density:</label>
-        <div class="col-sm-10">
-          <input type="number" class="form-control" step=0.0001 id="density" placeholder="0.9978" name="density" required>
-        </div>
-      </div>
-      <div class="row mb-2">
-        <label class="col-form-label col-sm-2 fw-bold" for="ph">Ph:</label>
-        <div class="col-sm-10">
-          <input type="number" class="form-control" step=0.01 id="ph" placeholder="3.51" name="ph" required>
-        </div>
-      </div>
-      <div class="row mb-2">
-        <label class="col-form-label col-sm-2 fw-bold" for="sulphates">Sulphates:</label>
-        <div class="col-sm-10">
-          <input type="number" class="form-control" step=0.01 id="sulphates" placeholder="0.56" name="sulphates" required>
-        </div>
-      </div>
-      <div class="row mb-2">
-        <label class="col-form-label col-sm-2 fw-bold" for="alcohol">Alcohol:</label>
-        <div class="col-sm-10">
-          <input type="number" class="form-control" step=0.1 id="alcohol" placeholder="9.4" name="alcohol" required>
-        </div>
       </div>
       <br>
-      <div class="row mb-2">
-        <input type="submit" class="form-control btn btn-warning">
+      <div class="row my-4">
+        <div class="col">&nbsp</div>
+        <div class="col-2">
+          <input type="submit" class="form-control btn btn-warning" value="Wine Quality Prediction">
+        </div>
+        <div class="col">&nbsp</div>
       </div>
 
     </form>
@@ -97,7 +109,7 @@
                 <b>{{ variable }}</b> : {{ value }}
             {% endfor %}
             <br>
-            <br> Predicted number of bikes in use:
+            <br> Red Wine Quality Prediction:
                <p style="font-size:50px">{{ result }}</p>
         {% endif %}
     </div>

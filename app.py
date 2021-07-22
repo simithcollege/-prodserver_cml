@@ -45,7 +45,16 @@ def main():
         return flask.render_template('main.html',
                                      original_input={'Fixed Acidity':fixedAcidity,
                                                      'Volatile Acidity':volatileAcidity,
-                                                     'Citric Acid':citricAcid},
+                                                     'Citric Acid':citricAcid,
+                                                     'Residual sugar':residualSugar,
+                                                     'Chlorides':chlorides,
+                                                     'Free sulfur dioxide':freeSulfur,
+                                                     'Total sulfur dioxide':totalSulfur,
+                                                     'Density':density,
+                                                     'PH':ph,
+                                                     'Sulphates':sulphates,
+                                                     'Alcohol':alcohol
+                                                     },
                                      result=prediction,
                                      )
 
